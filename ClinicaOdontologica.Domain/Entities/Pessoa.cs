@@ -11,7 +11,7 @@ namespace ClinicaOdontologica.Domain.Entities
     public abstract class Pessoa : Entity
     {
         public string Nome { get; protected set; }
-        public string CPF { get; protected set; }
+        public string Cpf { get; protected set; }
         public DateTime DataNascimento { get; protected set; }
         public string Endereco { get; protected set; }
         public string Telefone { get; protected set; }
@@ -19,7 +19,7 @@ namespace ClinicaOdontologica.Domain.Entities
         public Pessoa(string nome, string cpf, DateTime dataNascimento, string endereco, string telefone)
         {
             Nome = nome;
-            CPF = cpf;
+            Cpf = cpf;
             DataNascimento = dataNascimento;
             Endereco = endereco;
             Telefone = telefone;

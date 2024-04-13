@@ -26,6 +26,10 @@ namespace ClinicaOdontologica.Infrastructure.Repositories
         {
             return await _context.Set<T>().FirstOrDefaultAsync(predicate);
         }
+        public T? Get(Expression<Func<T, bool>> predicate)
+        {
+            return _context.Set<T>().FirstOrDefault(predicate);
+        }
         public async Task<T> CreateAsync(T entity)
         {
             _context.Set<T>().Add(entity);

@@ -14,6 +14,7 @@ namespace ClinicaOdontologica.Infrastructure.Repositories.Interfaces
         Task<T> CreateAsync(T entity);
         Task<T> UpdateAsync(T entity);
         Task<T> DeleteAsync(T entity);
+        T? Get(Expression<Func<T, bool>> predicate);
 
     }
 }

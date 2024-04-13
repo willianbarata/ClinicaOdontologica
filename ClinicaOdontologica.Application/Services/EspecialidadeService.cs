@@ -28,6 +28,12 @@ namespace ClinicaOdontologica.Application.Services
             var especialidadesDTO = _mapper.Map<IEnumerable<EspecialidadeDTO>>(especialidades);
             return especialidadesDTO;
         }
+        public async Task<EspecialidadeDTO> GetById(int? id)
+        {
+            var especialidadeEntity = await _especialidadeRepository.GetAsync(x => x.Id == id);
+            var especialidadeDTO = _mapper.Map<EspecialidadeDTO>(especialidadeEntity);
+            return especialidadeDTO;
+        }
 
         public async Task<EspecialidadeDTO> Add(EspecialidadeDTO especialidadeDTO)
         {
@@ -36,14 +42,6 @@ namespace ClinicaOdontologica.Application.Services
             var especialidadeCriadaDTO = _mapper.Map<EspecialidadeDTO>(especialidadeCriada);
             return especialidadeCriadaDTO;
         }
-
-        public async Task<EspecialidadeDTO> GetById(int? id)
-        {
-            var especialidadeEntity = await _especialidadeRepository.GetAsync(x => x.Id == id);
-            var especialidadeDTO = _mapper.Map<EspecialidadeDTO>(especialidadeEntity);
-            return especialidadeDTO;
-        }
-
 
         public async Task Update(EspecialidadeDTO especialidadeDTO)
         {

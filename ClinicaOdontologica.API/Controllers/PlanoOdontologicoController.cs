@@ -1,6 +1,7 @@
 ﻿using ClinicaOdontologica.Application.DTOs;
 using ClinicaOdontologica.Application.Interfaces;
 using ClinicaOdontologica.Application.Services;
+using ClinicaOdontologica.Application.ValidationErrors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClinicaOdontologica.API.Controllers
@@ -44,19 +45,21 @@ namespace ClinicaOdontologica.API.Controllers
         }
 
         [HttpPost]
-        [ProducesResponseType(typeof(EspecialidadeDTO), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(PlanoOdontologicoDTO), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<EspecialidadeDTO>> Post([FromBody] PlanoOdontologicoDTO planoOdontologicoDTO)
+        public async Task<ActionResult<PlanoOdontologicoDTO>> Post([FromBody] PlanoOdontologicoDTO planoOdontologicoDTO)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
 
-            var planoOdontologicoCriadoDTO = await _planoOdontoService.Add(planoOdontologicoDTO);
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
 
-            return new CreatedAtRouteResult("GetPlanoOdontologico",
-                new { id = planoOdontologicoCriadoDTO.Id }, planoOdontologicoCriadoDTO);
+                var planoOdontologicoCriadoDTO = await _planoOdontoService.Add(planoOdontologicoDTO);
+
+                return new CreatedAtRouteResult("GetPlanoOdontologico",
+                    new { id = planoOdontologicoCriadoDTO.Id }, planoOdontologicoCriadoDTO);
+
         }
 
 
@@ -76,7 +79,7 @@ namespace ClinicaOdontologica.API.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult<EspecialidadeDTO>> Delete(int id)
+        public async Task<ActionResult<PlanoOdontologicoDTO>> Delete(int id)
         {
             var planoOdontologico = await _planoOdontoService.GetById(id);
             if (planoOdontologico == null)

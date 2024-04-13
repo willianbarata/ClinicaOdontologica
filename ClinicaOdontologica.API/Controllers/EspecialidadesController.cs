@@ -76,13 +76,13 @@ namespace ClinicaOdontologica.API.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<EspecialidadeDTO>> Delete(int id)
         {
-            var especicalidade = await _especialidadesService.GetById(id);
-            if (especicalidade == null)
+            var especialidade = await _especialidadesService.GetById(id);
+            if (especialidade == null)
             {
                 return NotFound();
             }
             await _especialidadesService.Remove(id);
-            return Ok(especicalidade);
+            return Ok(especialidade);
         }
 
     }

@@ -21,6 +21,8 @@ namespace ClinicaOdontologica.Infrastructure.Context
             base.OnModelCreating(builder);
             builder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext)
                 .Assembly);
+
+
         }
     }
 }
