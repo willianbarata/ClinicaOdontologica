@@ -14,6 +14,8 @@ namespace ClinicaOdontologica.Infrastructure.Context
             : base(options)
         { }
         public DbSet<Especialidade> Especialidades { get; set; }
+        public DbSet<PlanoOdontologico> PlanosOdontologicos { get; set; }
+        public DbSet<Paciente> Pacientes { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

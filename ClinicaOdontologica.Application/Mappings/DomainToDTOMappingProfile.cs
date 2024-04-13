@@ -14,6 +14,7 @@ namespace ClinicaOdontologica.Application.Mappings
         public DomainToDTOMappingProfile()
         {
             CreateMap<Especialidade, EspecialidadeDTO>().ReverseMap();
+            CreateMap<PlanoOdontologico, PlanoOdontologicoDTO>().ReverseMap();    
         }
     }
 }

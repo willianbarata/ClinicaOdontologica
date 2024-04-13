@@ -27,6 +27,9 @@ namespace ClinicaOdontologica.CrossCutting.IoC
             services.AddScoped<IEspecialidadeRepository, EspecialidadeRepository>();
             services.AddScoped<IEspecialidadeService, EspecialidadeService>();
 
+            services.AddScoped<IPlanoOdontologicoRepository, PlanoOdontologicoRepository>();
+            services.AddScoped<IPlanoOdontologicoService, PlanoOdontologicoService>();
+
             services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
 
             return services;

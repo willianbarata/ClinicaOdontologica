@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ClinicaOdontologica.Domain.Entities
 {
+    [Table("Pessoas")]
     public abstract class Pessoa : Entity
     {
         public string Nome { get; protected set; }

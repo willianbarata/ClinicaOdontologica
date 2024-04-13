@@ -10,5 +10,6 @@ namespace ClinicaOdontologica.Domain.Entities
     {
         public string Nome { get; set; }
         public DateTime DataCadastro { get; set; }
+        
     }
 }
