@@ -10,6 +10,7 @@ Utilizei ORM Entity Framework, mas a aplicação está configurada para utilizar
 
 - Camada Domain
 A classe de domínio, possui as entidades, e não depende de nenhuma outra aplicação, é a parte que representa o negócio, as entidades.
+Nesse exemplo teste implementei Especialidade, Paciente e PlanoOdontologico, devido ao tempo não criei as outras entidades disponíveis como Dentista.
 
 - Camada Application
 Nela possuímos os DTOs, Interfaces e serviços, mapeamento facilidade de classe DTO para Entidade utilizando o Automapper que facilita esse trabalho no .NET .
