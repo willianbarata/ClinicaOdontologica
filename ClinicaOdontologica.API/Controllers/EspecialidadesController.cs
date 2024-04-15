@@ -18,16 +18,8 @@ namespace ClinicaOdontologica.API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<EspecialidadeDTO>>> Get()
         {
-            try
-            {
                 var especialidades = await _especialidadesService.GetEspecialidades();
                 return Ok(especialidades);
-            }
-            catch (Exception e)
-            {
-
-                throw e;
-            }
         }
 
         [HttpGet("{id}", Name = "GetEspecialidade")]
